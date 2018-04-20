@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<!--
+Created using JS Bin
+http://jsbin.com
+
+Copyright (c) 2018 by zsobe31 (http://jsbin.com/rosuseb/2/edit)
+
+Released under the MIT license: http://jsbin.mit-license.org
+-->
+<meta name="robots" content="noindex">
+<html>
+<head>
+<meta name="description" content="Tetractys">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Tetractys</title>
+</head>
+<body>
+  <canvas width="450" height="300" id="rajz" style="border:1px solid #000000;"></canvas>
+<script id="jsbin-javascript">
+var rajz = document.getElementById('rajz');
+var context = rajz.getContext('2d');
+
+var x = 225,
+    y = 75,
+    a = 50;
+
+// első sor - egy háromszög
+context.beginPath();
+context.moveTo(x,y);
+context.lineTo(x+a/2,y+a);
+context.lineTo(x-a/2,y+a);
+context.fillStyle = 'Tomato';
+context.fill();
+
+// második sor - kettő háromszög
+
+var v = x-a/2,
+    b = y+a;
+
+for (i = 0; i < 2; i++) {
+  context.beginPath();
+  context.moveTo(v,b);
+  context.lineTo(v+a/2,b+a);
+  context.lineTo(v-a/2,b+a);
+  context.fillStyle = 'MediumSeaGreen';
+  context.fill();
+  v = v + a;
+}
+
+// harmadik sor - három háromszög
+
+var k = x-a,
+    l = y+2*a;
+
+for (i = 0; i < 3; i++) {
+  context.beginPath();
+  context.moveTo(k,l);
+  context.lineTo(k+a/2,l+a);
+  context.lineTo(k-a/2,l+a);
+  context.fillStyle = 'SlateBlue';
+  context.fill();
+  k = k + a;
+}
+
+
+
+
+</script>
+</body>
+</html>
